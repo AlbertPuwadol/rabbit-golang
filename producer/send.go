@@ -19,6 +19,7 @@ func main() {
 	conn, err := amqp.Dial(fmt.Sprintf("amqp://%s:%s@localhost:5672/", "root", "root"))
 	failOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
+	log.Println("test")
 
 	ch, err := conn.Channel()
 	failOnError(err, "Failed to open a channel")
